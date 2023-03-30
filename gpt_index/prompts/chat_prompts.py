@@ -13,14 +13,14 @@ CHAT_REFINE_PROMPT_TMPL_MSGS = [
     HumanMessagePromptTemplate.from_template("{query_str}"),
     AIMessagePromptTemplate.from_template("{existing_answer}"),
     HumanMessagePromptTemplate.from_template(
-        "We have the opportunity to refine the above answer "
-        "(only if needed) with some more context below.\n"
+        "У нас есть возможность уточнить приведенный выше ответ "
+        "(только если нужно) с дополнительным контекстом ниже.\n"
         "------------\n"
         "{context_msg}\n"
         "------------\n"
-        "Given the new context, refine the original answer to better "
-        "answer the question. "
-        "If the context isn't useful, output the original answer again.",
+        "Учитывая новый контекст, уточни исходный ответ, чтобы "
+        "лучше ответить на вопрос."
+        "Если контекст бесполезен, выйдай исходный ответ. ",
     ),
 ]
 
@@ -34,17 +34,17 @@ CHAT_REFINE_TABLE_CONTEXT_TMPL_MSGS = [
     HumanMessagePromptTemplate.from_template("{query_str}"),
     AIMessagePromptTemplate.from_template("{existing_answer}"),
     HumanMessagePromptTemplate.from_template(
-        "We have provided a table schema below. "
+        "Мы предоставили схему таблицы ниже."
         "---------------------\n"
         "{schema}\n"
         "---------------------\n"
-        "We have also provided some context information below. "
+        "Мы также предоставили некоторую контекстную информацию ниже. "
         "{context_msg}\n"
         "---------------------\n"
-        "Given the context information and the table schema, "
-        "refine the original answer to better "
-        "answer the question. "
-        "If the context isn't useful, return the original answer."
+        "Учитывая контекстную информацию и схему таблицы, "
+        "уточни исходный ответ, чтобы лучше "
+        "ответить на вопрос. "
+        "Если контекст бесполезен, выдай исходный ответ. "
     ),
 ]
 CHAT_REFINE_TABLE_CONTEXT_PROMPT_LC = ChatPromptTemplate.from_messages(
